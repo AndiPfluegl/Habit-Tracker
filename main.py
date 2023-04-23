@@ -5,6 +5,7 @@ from datetime import date
 import tkinter as tk
 from tkinter import messagebox
 
+# set currentDate on today and sets up the current_user variable:
 currentDate = datetime.date.today()
 current_user = ""
 
@@ -18,7 +19,7 @@ class EndOfDay:
 
     def do_EoD(self):
         """ has to run end of day before the next day starts (<= 23:59) and the users has finished their inputs for the day.
-        The function sets all active habits with Status open on Status failed and set the Streak to 0 and updates it in the database habits.
+        The function sets all active habits with Status open to Status failed and set the Streak to 0 and updates it in the database habits.
         It also copies the row in the Habits database for all active habits for tomorrow and set the Status on open. """
 
         #creates two empty help-lists:
@@ -68,7 +69,7 @@ class EndOfDay:
 
     def set_status(self, ID):
         """checks the field status in the Habits table of the input ID and return the correct status for the EoD run:
-        * if the status is Failed then the return status will be Open
+        * if the status is Failed then the returned status will be Open
         * if the status is Done then it checks the DateFinishTask and if it is lower then DateToday the status stays on Done
         * otherwise the returned status will be Open"""
 
@@ -82,6 +83,7 @@ class EndOfDay:
                 return "Open"
 
 class Habit:
+    # all functions to create, delete, check-off and get habits
     def __init__(self):
         # defines the standard parameters for the habits:
         self.status = "Open"
