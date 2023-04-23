@@ -8,10 +8,10 @@ cur = con.cursor()
 currentDate = datetime.date.today()
 
 # In case of rerun this programme after the installation, remove the #:
-cur.execute("DROP Table Habits")
-cur.execute("DROP Table User")
-cur.execute("CREATE TABLE Habits(ID PRIMARY KEY, Date TIMESTAMP, User, Name, Period, Status, DateFinishTask TIMESTAMP, CreationDate TIMESTAMP, Streak, Active)")
-cur.execute("CREATE TABLE User(User, FirstName, LastName, EMail, Password, CreationDate TIMESTAMP)")
+#cur.execute("DROP Table Habits")
+#cur.execute("DROP Table User")
+#cur.execute("CREATE TABLE Habits(ID PRIMARY KEY, Date TIMESTAMP, User, Name, Period, Status, DateFinishTask TIMESTAMP, CreationDate TIMESTAMP, Streak, Active)")
+#cur.execute("CREATE TABLE User(User, FirstName, LastName, EMail, Password, CreationDate TIMESTAMP)")
 
 # Insert Dummy-Values in the habits-table:
 data = [
